@@ -22,9 +22,6 @@ public class WordsSearcher {
 		fileNames.add("file0.txt");
 		fileNames.add("file1.txt");
 		
-		
-		String fileName0 = fileNames.get(0).toString();
-		
 		String line;
 		ArrayList<String> text = new ArrayList<String>();
 		
@@ -34,7 +31,6 @@ public class WordsSearcher {
 				String fileName = fileNames.get(i).toString();
 				reader = new BufferedReader(new FileReader(dir+fileName));
 				line = reader.readLine();
-//				text.add( line );
 				while (line != null) {
 					text.add( line );
 					line = reader.readLine(); // read next line
@@ -46,6 +42,7 @@ public class WordsSearcher {
 		}
 		
 		System.out.printf("Y) Result: text.size(): %d\n", text.size());
+		StringBuilder sb = new StringBuilder();
 		
 		int cnt = 0;
 		
@@ -53,11 +50,13 @@ public class WordsSearcher {
 			String l = text.get(i).toString();
 
 			String l_up = l.toUpperCase();
-			System.out.printf("l_up: %d, l_up: %s\n", i,l_up.toString());
+//			System.out.printf("l_up: %d, l_up: %s\n", i,l_up.toString());
 			
 			int idx = l_up.indexOf(searched, 0);
 			
-			StringBuilder sb = new StringBuilder(l);
+//			StringBuilder sb = new StringBuilder(l);
+			sb.setLength(0);
+			sb.append(l);
 			
 			while (idx != -1) {
 				
@@ -67,16 +66,17 @@ public class WordsSearcher {
 					if (Character.isAlphabetic(l.charAt(idx-1)))
 						should_record = false;
 				
-				if (idx+searched.length() < l.length()-2) // if it is not the last charater of the checking line
-					if (Character.isAlphabetic(l.charAt(idx+searched.length()+1)))
+				if (idx+searched.length() < l.length()-1) // if it is not the last charater of the checking line
+					if (Character.isAlphabetic(l.charAt(idx+searched.length())))
 						should_record = false;
 				
 				if (should_record) {
 					++cnt;
-					System.out.printf("l_i: %d, lin: %s\n", i,l);
-					System.out.printf("idx: %d, str: %s\n", idx,searched);
+//					System.out.printf("l_i: %d, lin: %s\n", i,l);
+//					System.out.printf("idx: %d, str: %s\n", idx,searched);
 					
 					sb.replace(idx, idx+searched.length(), searched.toUpperCase());
+//					System.out.printf("rep: %d, rep: %s\n", i,sb.toString());
 				}
 				
 //				idx = l.indexOf(searched, idx+searched.length());
