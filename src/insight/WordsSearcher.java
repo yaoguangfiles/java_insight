@@ -9,7 +9,7 @@ public class WordsSearcher {
 	
 	public static void main(String[] args) {
 		
-		String input = "yao";
+		String input = "Russian";
 		String searched = input.toUpperCase();
 		
 		System.out.printf("Y) searched: %s\n", searched);
@@ -32,7 +32,9 @@ public class WordsSearcher {
 				reader = new BufferedReader(new FileReader(dir+fileName));
 				line = reader.readLine();
 				while (line != null) {
-					text.add( line );
+					if (line.trim().length() > 0)
+						text.add( line );
+					
 					line = reader.readLine(); // read next line
 				}
 				reader.close();

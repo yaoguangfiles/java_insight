@@ -1,3 +1,5 @@
-1.0: Prerequisites, yao starting this tutorial, make sure you have a preinstalled Ubuntu 16.04 desktop edition and have user access with sudo privileges to execute the administrative commands.
-1.1: Installing Yao, To install the latest Eclipse IDE on your Ubuntu system, follow these steps:
-1.2: Step yao – As we know, Eclipse is a Java-based application, and Java runtime environment (JRE) is required to install and run Eclipse IDE. You can install the JRE package by using the following command:
+Here are some key things to know about the conflict:
+
+WHY ARE SUBURBS IN UKRAINE TURNING INTO BATTLEFIELDS?
+
+The suburbs could be a barrier to Ukraine’s cities or a doorway for Russian troops, particularly around the capital of Kyiv — believed to be Moscow’s primary military objective.
