@@ -1,3 +1,3 @@
-2.0: yao, Step 2 – To download yao install snap package for Eclipse IDE, using the following command:
-2.1: After successful yao of Eclipse IDE, you will get the output on your screen similar to below:
+2.0: Step 2 – yAo download yao install snap package for Eclipse IDE, using the following command:
+2.1: After successful Yao of Eclipse IDE, you will get the output on your screen similar to below:
 2.2: yao default directory for the Workspace is okay, but you can choose any other directory also. After selecting, click on the Launch button to proceed.
