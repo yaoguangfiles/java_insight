@@ -12,6 +12,17 @@ public class WordsSearcher {
 	
 	public static void main(String[] args) {
 		
+		//-- Session 1: Change the below variables for Directory path and names of the input files --
+		
+		final String dir = "/home/rootroot/main/yao_j/workplace_java/insight/src/insight/text/"; // director of input files
+		
+		ArrayList<String> fileNames = new ArrayList<String>();
+		fileNames.add("file0.txt"); // input file 1
+		fileNames.add("file1.txt"); // input file 2
+		fileNames.add("file2.txt"); // input file 3
+		
+		//-- Session 1 End----------------------------------------------------------------------------
+		
 		StringBuilder stat = new StringBuilder();
 		int num_search = 0;
 		
@@ -25,25 +36,7 @@ public class WordsSearcher {
 			if (word.equalsIgnoreCase("-1"))
 				break;
 			
-//			System.out.printf("Y) word searched: %s\n", word);
-		      
-	//		String input = "Russian";
-	//		String searched = input.toUpperCase();
-			
 			String searched = word.toUpperCase();
-			
-//			System.out.printf("Y) searched: %s\n", searched);
-			
-			// directory where the input files reside
-			final String dir = "/home/rootroot/main/yao_j/workplace_java/insight/src/insight/text/";
-//			final String file_result = "result.txt";
-			
-			ArrayList<String> fileNames = new ArrayList<String>();
-			fileNames.add("file2.txt");
-			fileNames.add("file0.txt");
-			fileNames.add("file1.txt");
-			
-			
 			
 			String line;
 			ArrayList<String> text = new ArrayList<String>();
@@ -66,7 +59,6 @@ public class WordsSearcher {
 				}
 			}
 			
-//			System.out.printf("Y) Result: text.size(): %d\n", text.size());
 			StringBuilder sb = new StringBuilder();
 			
 			int cnt = 0;
@@ -80,11 +72,9 @@ public class WordsSearcher {
 				String l = text.get(i).toString();
 	
 				String l_up = l.toUpperCase();
-	//			System.out.printf("l_up: %d, l_up: %s\n", i,l_up.toString());
 				
 				int idx = l_up.indexOf(searched, 0);
 				
-	//			StringBuilder sb = new StringBuilder(l);
 				sb.setLength(0);
 				sb.append(l);
 				
@@ -114,42 +104,14 @@ public class WordsSearcher {
 					System.out.printf("%s\n", sb.toString());
 			}
 			
-//			System.out.printf("\nSummary): search: %s, cnt: %d\n\n\n", searched,cnt);
-			
 			++num_search;
 			stat.append("searched: "+word+"\t, matched: "+Integer.toString(cnt)+"\n");
-			
-//			try {
-//			      FileWriter myWriter = new FileWriter(dir+file_result);
-//			      myWriter.write(word);
-//			      myWriter.write(cnt);
-//			      myWriter.close();
-//			      System.out.println("Successfully wrote to the file.");
-//			    } catch (IOException e) {
-//			      System.out.println("An error occurred.");
-//			      e.printStackTrace();
-//			    }
-			
-//			try {
-//			      File myObj = new File(dir+file_result);
-//			      if (myObj.createNewFile()) {
-//			        System.out.println("File created: " + myObj.getName());
-//			      } else {
-//			        System.out.println("File already exists.");
-//			      }
-//			    } catch (IOException e) {
-//			      System.out.println("An error occurred.");
-//			      e.printStackTrace();
-//			    }
 			
 		  }
 		
 		System.out.println("\n------ Summary of search: -------\n");
 		System.out.printf("Number of search: %d\n", num_search);
-//		System.out.println("Summary of search: ");
 		System.out.println(stat.toString());
 		System.out.println("----------------------------------\n");
-		
 	}
-
 }
